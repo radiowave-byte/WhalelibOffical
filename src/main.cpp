@@ -133,27 +133,27 @@ lemlib::Drivetrain drivetrain(&leftMotors, // left motor group
 
 // Accurate linear controller - optimized for precision
 lemlib::ControllerSettings accurateLinear(
-    54,    // kP 
-    0.08,   // kI 
-    440,   // kD 
-    2,     // windupRange
-    1,   // smallError 
-    100,   // smallErrorTimeout 
-    3,     // largeError 
-    500,   // largeErrorTimeout 
-    20     // slew
+    10,    // kP 
+    0,   // kI 
+    50,   // kD 
+    0,     // windupRange
+    0,   // smallError 
+    0,   // smallErrorTimeout 
+    0,     // largeError 
+    0,   // largeErrorTimeout 
+    0     // slew
 );
 
 // Accurate angular controller
 lemlib::ControllerSettings accurateAngular(
-    6.1,   // kP
-    0.5,   // kI 
+    9,   // kP
+    0,   // kI 
     70,    // kD
-    4,     // windupRange
-    3,     // smallError
-    100,   // smallErrorTimeout
-    8,     // largeError
-    500,   // largeErrorTimeout
+    0,     // windupRange
+    0,     // smallError
+    0,   // smallErrorTimeout
+    0,     // largeError
+    0,   // largeErrorTimeout
     0     // slew
 );
 
