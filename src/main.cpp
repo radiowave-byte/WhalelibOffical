@@ -45,41 +45,6 @@ void logToFile(const std::string& filename, const std::string& text) {
     fclose(file);
 }
 
-void checkSDCard() {
-    // Check if the SD card is mounted
-    if (!pros::usd::is_installed()) {
-        printToLine(false, 7, "SD card not detected!");
-        return;
-    }
-
-    // Try to create a test file
-    FILE* file = fopen("/usd/test.txt", "w");
-    if (file == nullptr) {
-        printToLine(false, 7, "Failed to write to SD card!");
-        return;
-    }
-
-    // Write a test line to the file
-    fprintf(file, "This is a test file.\n");
-    fclose(file);
-
-    // Verify the file was written
-    file = fopen("/usd/test.txt", "r");
-    if (file == nullptr) {
-        printToLine(false, 7, "Failed to read from SD card!");
-        return;
-    }
-
-    char line[100];
-    if (fgets(line, sizeof(line), file) != nullptr) {
-        printToLine(false, 7, "SD card working!");
-    } else {
-        printToLine(false, 7, "SD card read error!");
-    }
-
-    fclose(file);
-}
-
 
 
 
